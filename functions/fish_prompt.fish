@@ -61,7 +61,7 @@ function fish_prompt --description 'Write out the prompt'
         printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
     end
     if test -n "$IN_NIX_SHELL"
-        printf "<%s> " (set_color blue)"nix $IN_NIX_SHELL"(set_color normal)
+        printf "<%s> " (set_color blue)"nix $DK_ENV"(set_color normal)
     end
 
     printf '%s ' $suffix

@@ -1,5 +1,5 @@
 function arc --argument-names cmd --description "A xz-tar wrapper"
-  set --local num_threads $(cat /proc/cpuinfo | grep '^processor' | wc -l)
+  set --local num_threads $(sysctl -n hw.ncpu)
 
   switch $cmd
     case compress
