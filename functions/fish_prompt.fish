@@ -63,6 +63,9 @@ function fish_prompt --description 'Write out the prompt'
     if test -n "$IN_NIX_SHELL"
         printf "<%s> " (set_color blue)"nix $DK_ENV"(set_color normal)
     end
+    if test -n "$CONDA_PROMPT_MODIFIER"
+        printf "%s" (set_color blue)"$CONDA_PROMPT_MODIFIER"(set_color normal)
+    end
 
     printf '%s ' $suffix
     set_color normal
