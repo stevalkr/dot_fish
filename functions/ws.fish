@@ -10,6 +10,10 @@ function ws --wraps cd --wraps ls --description 'Change directory based on argum
                     cd ~/Playgrounds
                 case icloud
                     cd ~/Library/Mobile\ Documents
+                case config
+                    cd ~/.config
+                case devkit
+                    cd ~/.devkit
                 case '*'
                     echo Unknown argument: $argv[1]. Defaulting to ~/Documents.
                     cd ~/Documents
