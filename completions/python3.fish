@@ -2,6 +2,9 @@ function __fish_python_no_arg
     set -l num 1
     set -l tokens (commandline -poc)
     set -l has_arg_list -X -W --check-hash-based-pycs
+    if contains -- - $tokens
+        set num (math $num - 1)
+    end
     for has_arg in $has_arg_list
         if contains -- $has_arg $tokens
             set num (math $num + 1)

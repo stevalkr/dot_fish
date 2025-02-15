@@ -56,11 +56,14 @@ function fish_prompt --description 'Write out the prompt'
 
 
     # Line 2
-    echo
+    printf '\n'
     if test -n "$VIRTUAL_ENV"
-        printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
+        printf "[%s] " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
     end
     if test -n "$IN_NIX_SHELL"
+        if test -z "$DK_ENV"
+            set DK_ENV "shell"
+        end
         printf "<%s> " (set_color blue)"nix $DK_ENV"(set_color normal)
     end
     if test -n "$CONDA_PROMPT_MODIFIER"
